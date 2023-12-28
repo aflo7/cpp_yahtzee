@@ -1,0 +1,42 @@
+# This file is a template, and might need editing before it works on your project.
+# This is a sample GitLab CI/CD configuration file that should run without any modifications.
+# It demonstrates a basic 3 stage CI/CD pipeline. Instead of real tests or scripts,
+# it uses echo commands to simulate the pipeline execution.
+#
+# A pipeline is composed of independent jobs that run scripts, grouped into stages.
+# Stages run in sequential order, but jobs within stages run in parallel.
+before_script:
+    - apt-get update && apt-get -y install build-essential libssl-dev
+    - wget https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.14.5.tar.gz
+    - tar -zxvf cmake-3.14.5.tar.gz
+    - cd cmake-3.14.5
+    - ./bootstrap
+    - make 
+    - make install
+
+stages:          # List of stages for jobs, and their order of execution
+  # - build
+  - test
+
+# build:       # This job runs in the build stage, which runs first.
+#   stage: build
+#   script:
+#     - echo "Compiling the code..."
+#     - echo "Compile complete."
+
+test:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  script:
+    - pwd # /builds/aflo7/cmake_pipeline_testing/cmake-3.14.5
+    # - cd .. # /builds/aflo7/cmake_pipeline_testing
+    - cd .. # home dir
+    - ls
+
+    - rm -rf build
+    - mkdir build
+    - cd build
+
+    - cmake ..
+    - make
+    - ./testing2
+    - echo "Testing complete"
