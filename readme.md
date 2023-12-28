@@ -2,10 +2,9 @@
 <h2>Made By Andres Flores</h2>
 
 <h2>Technologies Used</h2>
-- C++
-- Google Tests
-- VS Code
-
+-   C++
+-   Google Tests
+-   VS Code
 
 
 <h3>Gameplay</h3>
