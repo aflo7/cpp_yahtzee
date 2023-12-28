@@ -25,7 +25,6 @@
 
 <h2>UML Diagram</h2>
 
-<img src="./images/uml.jpg" width="500">
-<p>Link to UML diagram: https://postimg.cc/0rXXX4VV</p>
+<img src="./images/uml.jpg" width="300">
 
 For CI/CD and testing info, check the screenshots readme1.png and readme2.png
