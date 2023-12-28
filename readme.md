@@ -28,3 +28,12 @@
 <img src="./images/umlpic.jpg" width="300">
 
 For CI/CD and testing info, check the screenshots readme1.png and readme2.png
+
+<h2>CI/CD Pipeline Information</h2>
+
+<img src="./readme1.png" width="300">
+
+<img src="./readme2.png" width="300">
+
+
+
