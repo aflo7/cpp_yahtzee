@@ -34,7 +34,7 @@ class ScoreCard {
     std::cout << "Your final score is: " << totalScore;
   }
 
-  void displayScoreSheet() 
+  void displayScoreSheet() {
    std::string blankSpace = " __";
    std::string acesScore = scores[0] == -1 ? blankSpace : to_string(scores[0]);
    std::string twosScore = scores[1] == -1 ? blankSpace : to_string(scores[1]);
@@ -185,8 +185,7 @@ class ScoreCard {
       }
       case 11: {
         // large straight
-        int increases =
-            0;  // if there are 4 increases, we have a small straight
+        int increases = 0;  // if there are 4 increases, we have a small straight
         for (int i = 0; i < 5; i++) {
           if (dice[i] < dice[i + 1]) {
             increases += 1;
@@ -221,11 +220,13 @@ class ScoreCard {
         break;
       default:
         //
-        std::cout << "default clause";
+        std::cout << "default clause" << std::endl;
     }
 
     scores[choice - 1] = sum;
   }
+
+
 };
 
 class Game {
