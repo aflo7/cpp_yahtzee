@@ -40,7 +40,7 @@ class ScoreCard {
    std::string twosScore = scores[1] == -1 ? blankSpace : to_string(scores[1]);
    std::string threesScore = scores[2] == -1 ? blankSpace : to_string(scores[2]);
    std::string foursScore = scores[3] == -1 ? blankSpace : to_string(scores[3]);
-   std::string fivesScore = scores[4] == -1 ? blankSpace : to_string(scores[4);
+   std::string fivesScore = scores[4] == -1 ? blankSpace : to_string(scores[4]);
    std::string sixesScore = scores[5] == -1 ? blankSpace : to_string(scores[5]);
    std::string threeOfAKindScore =
         (scores[6] == -1 ? blankSpace : to_string(scores[6]));
