@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <algorithm>
 #include <iostream>
+
 class DiceTests {
  public:
   int rollDice() { return rand() % (6 - 1 + 1) + 1; }

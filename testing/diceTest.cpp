@@ -1,7 +1,7 @@
 
 
 // commands to run this file:
-// 1. g++ diceTest.cpp -o diceTest
+// 1. g++ diceTest.cpp -o diceTest --std=c++17
 // 2.  ./diceTest
 
 #include <assert.h>
