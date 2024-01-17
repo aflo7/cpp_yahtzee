@@ -19,7 +19,7 @@
 
 <h2>How to run the program (make sure you are in the game directory)</h2>
 
-1. g++ game.cpp -o game --std=c++11
+1. g++ game.cpp -o game --std=c++17
 2. ./game
 
 <img src="./images/ss2.jpeg" width="300">
