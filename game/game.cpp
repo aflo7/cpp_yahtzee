@@ -6,8 +6,6 @@
 #include <iostream>
 #include <map>
 
-using namespace std;
-
 class Die {
  public:
   int value;
@@ -33,47 +31,47 @@ class ScoreCard {
     for (int i = 0; i < 13; i++) {
       totalScore += scores[i];
     }
-    cout << "Your final score is: " << totalScore;
+    std::cout << "Your final score is: " << totalScore;
   }
 
-  void displayScoreSheet() {
-    string blankSpace = " __";
-    string acesScore = scores[0] == -1 ? blankSpace : to_string(scores[0]);
-    string twosScore = scores[1] == -1 ? blankSpace : to_string(scores[1]);
-    string threesScore = scores[2] == -1 ? blankSpace : to_string(scores[2]);
-    string foursScore = scores[3] == -1 ? blankSpace : to_string(scores[3]);
-    string fivesScore = scores[4] == -1 ? blankSpace : to_string(scores[4]);
-    string sixesScore = scores[5] == -1 ? blankSpace : to_string(scores[5]);
-    string threeOfAKindScore =
+  void displayScoreSheet() 
+   std::string blankSpace = " __";
+   std::string acesScore = scores[0] == -1 ? blankSpace : to_string(scores[0]);
+   std::string twosScore = scores[1] == -1 ? blankSpace : to_string(scores[1]);
+   std::string threesScore = scores[2] == -1 ? blankSpace : to_string(scores[2]);
+   std::string foursScore = scores[3] == -1 ? blankSpace : to_string(scores[3]);
+   std::string fivesScore = scores[4] == -1 ? blankSpace : to_string(scores[4);
+   std::string sixesScore = scores[5] == -1 ? blankSpace : to_string(scores[5]);
+   std::string threeOfAKindScore =
         (scores[6] == -1 ? blankSpace : to_string(scores[6]));
-    string fourOfAKindScore =
+   std::string fourOfAKindScore =
         scores[7] == -1 ? blankSpace : to_string(scores[7]);
-    string fullHouseScore = scores[8] == -1 ? blankSpace : to_string(scores[8]);
-    string smallStraightScore =
+   std::string fullHouseScore = scores[8] == -1 ? blankSpace : to_string(scores[8]);
+   std::string smallStraightScore =
         scores[9] == -1 ? blankSpace : to_string(scores[9]);
-    string largeStraightScore =
+   std::string largeStraightScore =
         scores[10] == -1 ? blankSpace : to_string(scores[10]);
-    string yahtzeeScore = scores[11] == -1 ? blankSpace : to_string(scores[11]);
-    string chanceScore = scores[12] == -1 ? blankSpace : to_string(scores[12]);
+   std::string yahtzeeScore = scores[11] == -1 ? blankSpace : to_string(scores[11]);
+   std::string chanceScore = scores[12] == -1 ? blankSpace : to_string(scores[12]);
 
-    cout << "1: Aces: " << acesScore << endl;
-    cout << "2: Twos: " << twosScore << endl;
-    cout << "3: Threes: " << threesScore << endl;
-    cout << "4: Fours: " << foursScore << endl;
-    cout << "5: Fives: " << fivesScore << endl;
-    cout << "6: Sixes: " << sixesScore << endl;
-    cout << "7: 3 of a kind: " << threeOfAKindScore << endl;
-    cout << "8: 4 of a kind: " << fourOfAKindScore << endl;
-    cout << "9: Full House: " << fullHouseScore << endl;
-    cout << "10: Small Straight: " << smallStraightScore << endl;
-    cout << "11: Large Straight: " << largeStraightScore << endl;
-    cout << "12: Yahztzee: " << yahtzeeScore << endl;
-    cout << "13: Chance: " << chanceScore << endl;
+    std::cout << "1: Aces: " << acesScore << std::endl;
+    std::cout << "2: Twos: " << twosScore << std::endl;
+    std::cout << "3: Threes: " << threesScore << std::endl;
+    std::cout << "4: Fours: " << foursScore << std::endl;
+    std::cout << "5: Fives: " << fivesScore << std::endl;
+    std::cout << "6: Sixes: " << sixesScore << std::endl;
+    std::cout << "7: 3 of a kind: " << threeOfAKindScore << std::endl;
+    std::cout << "8: 4 of a kind: " << fourOfAKindScore << std::endl;
+    std::cout << "9: Full House: " << fullHouseScore << std::endl;
+    std::cout << "10: Small Straight: " << smallStraightScore << std::endl;
+    std::cout << "11: Large Straight: " << largeStraightScore << std::endl;
+    std::cout << "12: Yahztzee: " << yahtzeeScore << std::endl;
+    std::cout << "13: Chance: " << chanceScore << std::endl;
   }
 
   void scoreCurrentDice(int choice, int dice) {
-    // cout << "Inside score current dice" << endl;
-    // cout << "choice: " << choice << endl;
+    // std::cout << "Inside score current dice" << std::endl;
+    // std::cout << "choice: " << choice << std::endl;
     int sum = 0;
     switch (choice) {
       case 1:
@@ -124,7 +122,7 @@ class ScoreCard {
           counter[dice[i]]++;
         }
         for (auto pair : counter) {
-          // cout << pair.first << ": " << pair.second << endl;
+          // std::cout << pair.first << ": " << pair.second << std::endl;
           if (pair.second >= 3) {
             sum += pair.first * 3;
             break;
@@ -223,7 +221,7 @@ class ScoreCard {
         break;
       default:
         //
-        cout << "default clause";
+        std::cout << "default clause";
     }
 
     scores[choice - 1] = sum;
@@ -232,7 +230,7 @@ class ScoreCard {
 
 class Game {
  public:
-  string playerName;
+ std::string playerName;
   int roundsLeft;
   int dice[6];
   int totalScore;
@@ -257,14 +255,14 @@ class Game {
   void gameLoop() {
     while (roundsLeft > 0) {
       int rerolls = 3;
-      string choice = "";
-      cout << "Current Round: " << roundsLeft << endl;
+     std::string choice = "";
+      std::cout << "Current Round: " << roundsLeft << std::endl;
 
       while (rerolls > 0) {
         rollSixDice();
-        cout << dice[0] << " " << dice[1] << " " << dice[2] << " ";
-        cout << dice[3] << " " << dice[4] << " " << dice[5] << endl;
-        cout << "Reroll? (" << rerolls << ") left. y/n/q" << endl;
+        std::cout << dice[0] << " " << dice[1] << " " << dice[2] << " ";
+        std::cout << dice[3] << " " << dice[4] << " " << dice[5] << std::endl;
+        std::cout << "Reroll? (" << rerolls << ") left. y/n/q" << std::endl;
         cin >> choice;
 
         if (choice == "n") {
@@ -275,17 +273,17 @@ class Game {
           rerolls -= 1;
           continue;
         } else {
-          cout << "Invalid input" << endl;
+          std::cout << "Invalid input" << std::endl;
           exit(0);
         }
       }
       // choose the way you want to be scored
       int scoreChoice;
-      cout << "Choose the way you want to be scored" << endl;
+      std::cout << "Choose the way you want to be scored" << std::endl;
       sc->displayScoreSheet();
       cin >> scoreChoice;  // must be number between 1 and 13
       if (scoreChoice < 1 || scoreChoice > 13) {
-        cout << "Invalid input" << endl;
+        std::cout << "Invalid input" << std::endl;
         exit(0);
       }
 
@@ -306,6 +304,6 @@ class Game {
 int main() {
   Game game("Andres");
 
-  cout << "Thanks for playing";
+  std::cout << "Thanks for playing";
   return 0;
 }
