@@ -1,0 +1,3 @@
+commands to run this file:
+1. g++ game.cpp -o game --std=c++17
+2. ./game

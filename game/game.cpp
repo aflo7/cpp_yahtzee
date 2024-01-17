@@ -1,6 +1,3 @@
-// commands to run this file:
-// 1. g++ game.cpp -o game --std=c++17
-// 2.  ./game
 
 #include <algorithm>
 #include <iostream>
@@ -65,7 +62,7 @@ class ScoreCard {
     std::cout << "9: Full House: " << fullHouseScore << std::endl;
     std::cout << "10: Small Straight: " << smallStraightScore << std::endl;
     std::cout << "11: Large Straight: " << largeStraightScore << std::endl;
-    std::cout << "12: Yahztzee: " << yahtzeeScore << std::endl;
+    std::cout << "12: Yahtzee: " << yahtzeeScore << std::endl;
     std::cout << "13: Chance: " << chanceScore << std::endl;
   }
 
@@ -304,7 +301,6 @@ class Game {
 
 int main() {
   Game game("Andres");
-
-  std::cout << "Thanks for playing";
+  std::cout << "Thanks for playing" << std::endl;
   return 0;
 }
