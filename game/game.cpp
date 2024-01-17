@@ -1,5 +1,5 @@
 // commands to run this file:
-// 1. g++ game.cpp -o game --std=c++11
+// 1. g++ game.cpp -o game --std=c++17
 // 2.  ./game
 
 #include <algorithm>
@@ -71,7 +71,7 @@ class ScoreCard {
     cout << "13: Chance: " << chanceScore << endl;
   }
 
-  void scoreCurrentDice(int choice, int* dice) {
+  void scoreCurrentDice(int choice, int dice) {
     // cout << "Inside score current dice" << endl;
     // cout << "choice: " << choice << endl;
     int sum = 0;
@@ -236,8 +236,8 @@ class Game {
   int roundsLeft;
   int dice[6];
   int totalScore;
-  ScoreCard* sc;
-  Dice* diceObj;
+  ScoreCard sc;
+  Dice diceObj;
 
   Game(string playerName) {
     this->playerName = playerName;
